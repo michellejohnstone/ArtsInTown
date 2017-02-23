@@ -5,4 +5,10 @@ var ctrlMain = require('../controller/main');
 /* GET home page. */
 router.get('/', ctrlMain.index);
 
+/*GET 'Find Events' page */
+router.get('/events', ctrlMain.eventList);
+
+/*GET 'Contact' page */
+router.get('/contact', ctrlMain.contact);
+
 module.exports = router;
