@@ -2,6 +2,10 @@ module.exports.index = function(req, res) {
 	res.render('index', {title: 'Express'});
 };
 
+module.exports.postEvent = function(req, res) {
+    res.render('postLayout', {title: 'Post Event'});
+};
+
 module.exports.eventList = function(req, res) {
     res.render('eventLayout', {title: 'Browse local events near you.'});
 };
