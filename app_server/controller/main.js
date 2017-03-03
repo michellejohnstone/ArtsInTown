@@ -1,5 +1,5 @@
 module.exports.index = function(req, res) {
-	res.render('landing', {title: 'Express'});
+	res.render('layout', {title: 'Express'});
 };
 
 module.exports.eventList = function(req, res) {
