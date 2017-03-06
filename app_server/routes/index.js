@@ -9,7 +9,7 @@ router.get('/', ctrlMain.index);
 router.get('/events', ctrlMain.eventList);
 
 /*GET 'Events Details' page */
-router.get('/eventDetail', ctrlMain.eventDetail);
+router.get('/eventDetail', ctrlMain);
 
 /*GET 'Contact' page */
 router.get('/contact', ctrlMain.contact);
