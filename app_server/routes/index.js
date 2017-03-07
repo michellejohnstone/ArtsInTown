@@ -8,6 +8,9 @@ router.get('/', ctrlMain.index);
 /*GET 'Find Events' page */
 router.get('/events', ctrlMain.eventList);
 
+/*GET 'Events Details' page */
+router.get('/eventDetail', ctrlMain);
+
 /*Get 'Post Event' page */
 router.get('/post', ctrlMain.postEvent);
 
