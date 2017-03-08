@@ -14,9 +14,6 @@ module.exports.contact = function(req, res) {
     res.render('contactLayout', {title: 'Send us a message.'});
 };
 
-module.exports.eventDetail = function(req, res) {
-    res.render('eventDetail', {title: 'Details on event.'});
-};
 
 // module.exports.eventList = function(req, res) {
 //     res.render('eventLayout', {
