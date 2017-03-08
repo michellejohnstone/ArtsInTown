@@ -1,5 +1,5 @@
 module.exports.index = function(req, res) {
-	res.render('layout', {title: 'Express'});
+	res.render('index', {title: 'Express'});
 };
 
 module.exports.postEvent = function(req, res) {
@@ -17,7 +17,6 @@ module.exports.contact = function(req, res) {
 module.exports.eventDetail = function(req, res) {
     res.render('eventDetail', {title: 'Details for your event.'});
 };
-
 
 // module.exports.eventList = function(req, res) {
 //     res.render('eventLayout', {
