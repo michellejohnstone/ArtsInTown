@@ -37,12 +37,12 @@ module.exports.eventGetOne = function(req, res) {
      });
 };
 
-var _splitArray = function(input) {
-  var output;
-  if (input && input.length > 0) {
-    output = input.split(";");
-  } else {
-    output = [];
-  }
-  return output;
-};
+// var _splitArray = function(input) {
+//   var output;
+//   if (input && input.length > 0) {
+//     output = input.split(";");
+//   } else {
+//     output = [];
+//   }
+//   return output;
+// };
