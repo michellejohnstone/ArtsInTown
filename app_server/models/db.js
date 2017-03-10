@@ -1,60 +1,47 @@
 var mongoose = require ( 'mongoose' );
 var gracefulShutdown;
 var dbURI = 'mongodb://localhost/artsintown';
-var readline = require("readline");
+
+//connect to MongoDB using mongoose
+// no callbacks after DB connection, instead mongoose listens for events
 mongoose.connect(dbURI);
 
-if (process.platform == "win32") 
-    var rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-    rl.on("SIGINT", function() {
-        process.emit("SIGINT");
-    });
-}
-
-
-
-//print statements to show mongoose connection events
+// Monitoring the state of the mongoose connection 
+// CONNECTION EVENTS: connected, error, disconnected 
 mongoose.connection.on('connected', function() {
     console.log('Mongoose connected to ' + dbURI);
 });
-
 mongoose.connection.on('error', function(err) {
     console.log('Mongoose connection error: ' + err);
 });
-
-
-mongoose.connection.on('disconnected', function () {
+mongoose.connection.on('disconnected', function() {
     console.log('Mongoose disconnected');
-})
+});
 
-//function to close Mongoose connection
+// For app termination
+// listen for events on main node app 
+process.on('SIGINT', function() {
+    gracefulShutdown('app termination', function() {
+            // kills node process (main process)
+            process.exit(0);
+    });
+});
 var gracefulShutdown = function(msg, callback) {
-    mongoose.connection.close(function () {
-        console.log('Mongoose disconnected through ' + mag);
+    
+    // closing the mongoose conenction is asyn, needs callback  
+    mongoose.connection.close(function() {
+        console.log('Mongoose disconnected through ' + msg);
         callback();
     });
 };
 
-//For nodemon restarts
-process.once('SIGUSR2', fucntion() {
-  gracefulShutdown('nodemon restart', function() {
-      process.kill(process.pid, 'SIGUSR2');
-  }) ; 
-});
-
-//For app termination
-process.on('SIGINT', function() {
-    gracefulShutdown('app termination', function() {
-        process.exit(0);
-    });
-});
-
-//For Heroku app termination
+//  For heroku
 process.on('SIGTERM', function() {
-    gracefulShutdown('Heroku app shutdown', function() {
-        process.exit(0);
-    });
+     gracefulShutdown('app termination', function() {
+             // kills node process (main process)
+             process.exit(0);
+     });
 });
+
+// BRING IN YOUR SCHEMAS
+require('./events');
