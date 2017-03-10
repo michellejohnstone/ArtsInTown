@@ -31,10 +31,7 @@ var eventSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    organizer: {
-        type: String,
-        required: true
-    },
+    organizer: String,
     details: { 
         type: String,
         required: true
@@ -46,4 +43,4 @@ var eventSchema = new mongoose.Schema({
 
 // model name, schema name, collection name (optional)
 // collection name will be Students by default 
-mongoose.model('Event', eventSchema, 'events');
+mongoose.model('Event', eventSchema);

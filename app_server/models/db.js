@@ -1,19 +1,7 @@
 var mongoose = require ( 'mongoose' );
 var gracefulShutdown;
 var dbURI = 'mongodb://localhost/artsintown';
-var readline = require("readline");
 mongoose.connect(dbURI);
-
-if (process.platform == "win32") {
-    var rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-    rl.on("SIGINT", function() {
-        process.emit("SIGINT");
-    });
-}
-
 
 
 //print statements to show mongoose connection events
@@ -58,3 +46,6 @@ process.on('SIGTERM', function() {
         process.exit(0);
     });
 });
+
+//Schemas & Models
+require('./events');
