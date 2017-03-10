@@ -5,13 +5,15 @@
         "cost" : "Free", 
         "organizer" : "Band",
         "venueName": "Cute Cafe",
-        "address": "125 High Street, Oakland, CA 94608" },
+        "address": "125 High Street, Oakland, CA 94608",
+        "tags": ["poetry", "local", "oakland"]},
     { 
         "name" : "DJ Bluntz + Artists", 
         "date" : "April 1, 2017",
         "cost" : "$15", 
         "venueName": "Skull Bar",
-        "address": "311 Broadway, Oakland, CA 94607" },
+        "address": "311 Broadway, Oakland, CA 94607",
+        "tags": ["dj", "music", "oakland"]},
     { 
         "name" : "ODD BALL GALLERY EXPO", 
         "date" : "March 31, 2017",
@@ -44,7 +46,8 @@
         "cost" : "Free", 
         "organizer" : "Band",
         "venueName": "The Old Parish",
-        "address": "579 18th St, Oakland, CA 94612" },
+        "address": "579 18th St, Oakland, CA 94612",
+        "tags": ["alternative", "music", "indie", "oakland"]},
     { 
         "name" : "Jay Zee and the Lemons", 
         "date" : "May 25, 2017",
