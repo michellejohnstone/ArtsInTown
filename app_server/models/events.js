@@ -4,7 +4,19 @@ var mongoose = require('mongoose');
 // declare before parent schema
 var locationSchema = new mongoose.Schema({
     venueName:String,
-    address: { 
+    streetAddress: { 
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    zipCode: {
         type: String,
         required: true
     },
@@ -23,13 +35,21 @@ var eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    time: {
+        type: String,
+        required: true
+    },
     cost: {
-        type: Number,
+        type: String,
         required: true
     },
     organizer: String,
     details: { 
         type: String,
+        required: true
+    },
+    tags: {
+        type:[String],
         required: true
     },
     
