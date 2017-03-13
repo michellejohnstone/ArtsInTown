@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ctrlMain = require('../controller/main');
 var postevents = require('../controller/postevent');
-
+var ctrlEvent = require('../controller/eventscontrollers.js');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -18,6 +18,14 @@ router.get('/post', ctrlMain.postEvent);
 
 /*GET 'Contact' page */
 router.get('/contact', ctrlMain.contact);
+
+router
+ .route('/events')
+ .get(ctrlEvent.eventsGetAll);
+    
+router
+  .route('/events/:venueName')
+  .get(ctrlEvent.eventGetOne);
 
 
 /*POST db*/

@@ -19,6 +19,7 @@
         "venueName": "Skull Bar",
         "address": "311 Broadway, Oakland, CA 94607",
         "tags": ["dj", "music", "oakland"]},
+
     { 
         "name" : "ODD BALL GALLERY EXPO", 
         "date" : "March 31, 2017",
@@ -66,12 +67,5 @@
         "cost" : "Donation", 
         "venueName": "Top of the Hill",
         "address": "1233 17th St, San Francisco, CA 94107" 
-    }
-    { 
-        "name" : "A One Lady Show", 
-        "date" : "May 10, 2017",
-        "cost" : "Donation", 
-        "venueName": "Top of the Hill",
-        "address": "1233 17th St, San Francisco, CA 94107" 
-    }
+    } 
 ]
