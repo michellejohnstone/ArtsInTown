@@ -2,10 +2,15 @@
     { 
         "name" : "LOCAL POETS READING", 
         "date" : "March 25, 2017",
+        "time" : "8",
         "cost" : "Free", 
         "organizer" : "Band",
+        "details" : "Come hear local poets!",
         "venueName": "Cute Cafe",
         "address": "125 High Street, Oakland, CA 94608",
+        "city": "Berkeley",
+        "state": "CA",
+        "zipCode": "94103",
         "tags": ["poetry", "local", "oakland"]},
     { 
         "name" : "DJ Bluntz + Artists", 
