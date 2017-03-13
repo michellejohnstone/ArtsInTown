@@ -3,14 +3,11 @@ var mongoose = require('mongoose');
 // nested schema,
 // declare before parent schema
 var locationSchema = new mongoose.Schema({
-    venueName: String,
-    // streetAddress: { 
-    //     type: String,
-    //     required: true
-    // },
-    //
-    address: String,
-    
+    venueName:String,
+    streetAddress: { 
+        type: String,
+        required: true
+    },
     city: {
         type: String,
         required: true
@@ -42,12 +39,10 @@ var eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-  
     cost: {
         type: String,
         required: true
     },
-
     organizer: String,
     details: { 
         type: String,
@@ -63,5 +58,5 @@ var eventSchema = new mongoose.Schema({
 });
 
 // model name, schema name, collection name (optional)
-// collection name will be Students by default 
+// collection name will be events by default 
 mongoose.model('Event', eventSchema);
