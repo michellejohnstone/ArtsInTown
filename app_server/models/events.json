@@ -4,11 +4,8 @@
         "date" : "March 25, 2017",
         "cost" : "Free", 
         "organizer" : "Band",
-        "venueName": "Cute Cafe",
-        "streetAddress": "125 High Street",
-        "city": "Oakland",
-        "state": "CA",
-        "zipCode": "94608",
+        "venueName": "Octopus Literary Salon",
+        "address": "2101 Webster St #170, Oakland, CA 94612",
         "tags": ["poetry", "local", "oakland"]},
     { 
         "name" : "DJ Bluntz + Artists", 
@@ -25,11 +22,7 @@
         "date" : "March 31, 2017",
         "cost" : "Donation", 
         "venueName": "Odd Ball Gallery",
-        "streetAddress": "2000 4th St",
-        "city": "Berkeley",
-        "state": "CA",
-        "zipCode": "94710",
-        
+        "address": "2000 4th St, Berkeley, CA 94710" },
     { 
         "name" : "BEER AND GUITARS", 
         "date" : "April 7, 2017",
