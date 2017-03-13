@@ -58,3 +58,6 @@ process.on('SIGTERM', function() {
         process.exit(0);
     });
 });
+
+//bring in schemas and models
+require('./events');
