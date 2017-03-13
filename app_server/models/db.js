@@ -47,5 +47,5 @@ process.on('SIGTERM', function() {
     });
 });
 
-//Schemas & Models
+//bring in schemas and models
 require('./events');
