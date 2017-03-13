@@ -17,12 +17,14 @@ module.exports.eventsGetAll = function(req, res) {
 
 module.exports.eventGetOne = function(req, res) {
     console.log('Read one event');
-    var id = require.params.venueName;
+
+    var id = req.params.venueName;
     console.log('req.params', req.params);
-    console.log('GET venueName', id);
+    // console.log('GET venueName', id);
     
     Event
-     .findOne(id)
+     .findOne({venueName: id})
+
      .exec(function(err, doc) {
          if(err) {
              console.log("can't get event", id);
@@ -46,3 +48,4 @@ var _splitArray = function(input) {
   }
   return output;
 };
+

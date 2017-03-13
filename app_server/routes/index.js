@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var ctrlMain = require('../controller/main');
+var ctrlEvent = require('../controller/eventscontrollers');
 var postevents = require('../controller/postevent');
-var ctrlEvent = require('../controller/eventscontrollers.js');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
 
-/*GET 'Find Events' page */
-router.get('/events', ctrlMain.eventList);
+// /*GET 'Find Events' page */
+router.get('/eventList', ctrlMain.eventList);
 
 /*GET 'Events Details' page */
 router.get('/eventDetail', ctrlMain.eventDetail);
@@ -37,4 +37,6 @@ router.delete('/viewevent/:eventid', postevents.deleteEvent);
 /*PUT db aka UPDATE*/
 router.put('/viewevent/:eventid', postevents.eventsUpdateOne);
 
+router.get('/events', ctrlEvent.eventsGetAll);
+router.get('/events/:venueName', ctrlEvent.eventGetOne);
 module.exports = router;
