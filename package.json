@@ -17,6 +17,10 @@
     "jade": "~1.11.0",
     "mongoose": "^4.8.6",
     "morgan": "~1.7.0",
+<<<<<<< HEAD
+=======
+    "nodemon": "^1.11.0",
+>>>>>>> 1bc5514139b0f1e1deb1899f41b6146373ca9048
     "readline": "0.0.x",
     "serve-favicon": "~2.3.2"
   }

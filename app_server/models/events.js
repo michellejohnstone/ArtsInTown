@@ -40,12 +40,10 @@ var eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
     cost: {
         type: String,
         required: true
     },
-
     organizer: String,
     details: { 
         type: String,

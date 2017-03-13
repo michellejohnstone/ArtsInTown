@@ -5,6 +5,10 @@ var dbURI = 'mongodb://localhost/artsintown';
 //connect to MongoDB using mongoose
 // no callbacks after DB connection, instead mongoose listens for events
 mongoose.connect(dbURI);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1bc5514139b0f1e1deb1899f41b6146373ca9048
 
 // Monitoring the state of the mongoose connection 
 // CONNECTION EVENTS: connected, error, disconnected 
@@ -35,13 +39,12 @@ var gracefulShutdown = function(msg, callback) {
     });
 };
 
-//  For heroku
+//For Heroku app termination
 process.on('SIGTERM', function() {
-     gracefulShutdown('app termination', function() {
-             // kills node process (main process)
-             process.exit(0);
-     });
+    gracefulShutdown('Heroku app shutdown', function() {
+        process.exit(0);
+    });
 });
 
-// BRING IN YOUR SCHEMAS
+//bring in schemas and models
 require('./events');
