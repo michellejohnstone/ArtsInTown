@@ -152,3 +152,18 @@ module.exports.getEvents = function(req, res) {
         .json(docs); // set res.json to docs 
     });
 };
+
+//GET TAGS
+module.exports.getTags = function(req, res) {
+  console.log('GET all tags');
+  console.log(req.tags.query);
+  
+  Events.collection
+  .find()
+  .toArray(function(err, docs) {
+    console.log("Found tag", docs.length);
+    res
+      .status(200)
+      .json(docs);
+  });
+};
