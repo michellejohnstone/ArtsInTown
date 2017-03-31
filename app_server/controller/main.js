@@ -18,12 +18,12 @@ module.exports.eventDetail = function(req, res) {
     res.render('eventDetail', {title: 'Details for your event.'});
 };
 
-module.exports.login = function(req, res) {
-    res.render('login', {title: 'Login form.'});
+module.exports.createUser = function(req, res) {
+    res.render('index', {title: 'Users'});
 };
 
-module.exports.register = function(req, res) {
-    res.render('register', {title: 'Register form.'});
+module.exports.login = function(req, res) {
+    res.render('login', {title: 'Login form.'});
 };
 
 module.exports.profile = function(req, res) {

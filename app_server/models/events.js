@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 // declare before parent schema
 var locationSchema = new mongoose.Schema({
     venueName:String,
+
     streetAddress: { 
         type: String,
         required: true
