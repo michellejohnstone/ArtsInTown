@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 var ctrlMain = require('../controller/main');
 var ctrlEvent = require('../controller/eventscontrollers');
 var postevents = require('../controller/postevent');
 var ctrlUsers = require('../controller/usercontroller');
 
+=======
+var ctrlMain = require('../controllers/main');
+>>>>>>> 7bdfc813614ad7c74b774ce784533592ebcfdf1a
 
-/* GET home page. */
+//navagation bar routes
 router.get('/', ctrlMain.index);
+<<<<<<< HEAD
 
 
 /* GET USER */
@@ -16,13 +21,12 @@ router.get('/login', ctrlMain.login);
 
 
 // /*GET 'Find Events' page */
+=======
+>>>>>>> 7bdfc813614ad7c74b774ce784533592ebcfdf1a
 router.get('/eventList', ctrlMain.eventList);
-
-/*GET 'Events Details' page */
 router.get('/eventDetail', ctrlMain.eventDetail);
-
-/*Get 'Post Event' page */
 router.get('/post', ctrlMain.postEvent);
+<<<<<<< HEAD
 
 router.get('/events', ctrlEvent.eventsGetAll);
 router.get('/events/:venueName', ctrlEvent.eventGetOne);
@@ -57,4 +61,8 @@ router.get('/register', ctrlMain.register);
 
 router.get('/userProfile', ctrlMain.profile);
 
+=======
+router.get('/contact', ctrlMain.contact);
+
+>>>>>>> 7bdfc813614ad7c74b774ce784533592ebcfdf1a
 module.exports = router;
