@@ -19,7 +19,7 @@ module.exports.eventDetail = function(req, res) {
 };
 
 module.exports.createUser = function(req, res) {
-    res.render('index', {title: 'Users'});
+    res.render('register', {title: 'Users'});
 };
 
 module.exports.login = function(req, res) {
