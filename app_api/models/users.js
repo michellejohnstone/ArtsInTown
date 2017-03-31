@@ -25,7 +25,8 @@ var createUserSchema = new mongoose.Schema({
     password: { 
         type: String,
         required: true
-    }
+    },
+    bookmarks: [String]
 });
 
 
