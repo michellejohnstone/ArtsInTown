@@ -18,6 +18,10 @@ module.exports.eventDetail = function(req, res) {
     res.render('eventDetail', {title: 'Details for your event.'});
 };
 
+module.exports.createUser = function(req, res) {
+    res.render('index', {title: 'Users'});
+};
+
 module.exports.login = function(req, res) {
     res.render('login', {title: 'Login form.'});
 };
@@ -25,4 +29,3 @@ module.exports.login = function(req, res) {
 module.exports.profile = function(req, res) {
     res.render('userProfile', {title: 'User Profile page'});
 };
-

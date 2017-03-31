@@ -31,7 +31,6 @@ module.exports.eventGetOne = function(req, res) {
     
     Event
      .findOne({venueName: id})
-
      .exec(function(err, doc) {
          if(err) {
              console.log("can't get event", id);
