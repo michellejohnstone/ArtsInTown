@@ -6,7 +6,6 @@ var dbURI = 'mongodb://localhost/artsintown';
 // no callbacks after DB connection, instead mongoose listens for events
 mongoose.connect(dbURI);
 
-
 // Monitoring the state of the mongoose connection 
 // CONNECTION EVENTS: connected, error, disconnected 
 mongoose.connection.on('connected', function() {
@@ -45,3 +44,4 @@ process.on('SIGTERM', function() {
 
 //bring in schemas and models
 require('./events');
+//require('./Comment');

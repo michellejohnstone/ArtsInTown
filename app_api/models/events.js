@@ -25,6 +25,7 @@ var locationSchema = new mongoose.Schema({
     coords: {type: [Number], index: '2dsphere'}, 
 });
 
+
 // parent schema
 var eventSchema = new mongoose.Schema({
     name: {
@@ -54,9 +55,23 @@ var eventSchema = new mongoose.Schema({
     },
     
     // Add nested schema, reference as an array 
-    location:  [locationSchema]
+    location:  [locationSchema], 
+    
 });
 
+var commentSchema = new mongoose.Schema({
+    commentAuthor: {
+        type: String,
+        required: true
+    },
+    commentContent: {
+        type: String,
+        required: true
+    },
+    //needs to be autogen, for now wil have String as placeholder
+    commentTimeStamp: String,
+});
 // model name, schema name, collection name (optional)
 // collection name will be events by default 
 mongoose.model('Event', eventSchema);
+mongoose.model('Comment', commentSchema);

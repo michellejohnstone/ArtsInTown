@@ -17,7 +17,7 @@ module.exports.eventsUpdateOne = function(req, res) {
   console.log(req.params.eventid);
   Events
     .findById(req.params.eventid)
-    .select('name date time cost organizer details tags venueName address zipCode state city streetAddress coords') 
+    .select('name date time cost organizer details tags venueName address zipCode state city streetAddress coords commentAuthor commentContent commentTimestamp') 
     //'-' states that we don't want to retreive
     //from db.
     .exec(
