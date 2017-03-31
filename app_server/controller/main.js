@@ -22,10 +22,7 @@ module.exports.login = function(req, res) {
     res.render('login', {title: 'Login form.'});
 };
 
-module.exports.register = function(req, res) {
-    res.render('register', {title: 'Register form.'});
-};
-
 module.exports.profile = function(req, res) {
     res.render('userProfile', {title: 'User Profile page'});
 };
+
