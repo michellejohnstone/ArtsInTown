@@ -14,12 +14,6 @@ router.get('/', ctrlMain.index);
 /* GET login page */
 router.get('/login', ctrlMain.login);
 
-/* GET register page */
-router.get('/register', ctrlMain.register);
-
-router.get('/userProfile', ctrlMain.profile);
-
-
 
 // /*GET 'Find Events' page */
 router.get('/eventList', ctrlMain.eventList);
@@ -29,6 +23,10 @@ router.get('/eventDetail', ctrlMain.eventDetail);
 
 /*Get 'Post Event' page */
 router.get('/post', ctrlMain.postEvent);
+
+router.get('/events', ctrlEvent.eventsGetAll);
+router.get('/events/:venueName', ctrlEvent.eventGetOne);
+
 
 /*GET 'Contact' page */
 router.get('/contact', ctrlMain.contact);
@@ -53,7 +51,10 @@ router.get('/users/:userid', ctrlUsers.getOneUser);
 /*PUT user db aka UPDATE*/
 router.put('/users/:userid', ctrlUsers.usersUpdateOne);
 
-router.get('/events', ctrlEvent.eventsGetAll);
-router.get('/events/:venueName', ctrlEvent.eventGetOne);
+
+/* GET register page */
+router.get('/register', ctrlMain.register);
+
+router.get('/userProfile', ctrlMain.profile);
 
 module.exports = router;
