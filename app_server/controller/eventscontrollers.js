@@ -1,6 +1,13 @@
 var mongoose = require('mongoose');
 var Event = mongoose.model('Event');
 
+// var apiOptions = {
+//   server : "https://arts-in-town-diazjenn.c9users.io"
+// };
+// if (process.env.NODE_ENV === 'production') {
+//   apiOptions.server = "https://still-cove-65449.herokuapp.com";
+// }
+
 module.exports.eventsGetAll = function(req, res) {
     console.log('Read All Events');
     

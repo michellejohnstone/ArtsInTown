@@ -7,6 +7,18 @@ var postevents = require('../controller/postevent');
 /* GET home page. */
 router.get('/', ctrlMain.index);
 
+
+/* GET USER */
+/* GET login page */
+router.get('/login', ctrlMain.login);
+
+/* GET register page */
+router.get('/register', ctrlMain.register);
+
+router.get('/userProfile', ctrlMain.profile);
+
+
+
 // /*GET 'Find Events' page */
 router.get('/eventList', ctrlMain.eventList);
 
