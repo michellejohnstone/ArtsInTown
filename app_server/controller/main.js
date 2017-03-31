@@ -18,6 +18,10 @@ module.exports.eventDetail = function(req, res) {
     res.render('eventDetail', {title: 'Details for your event.'});
 };
 
+module.exports.createUser = function(req, res) {
+    res.render('index', {title: 'Users'});
+};
+
 // module.exports.eventList = function(req, res) {
 //     res.render('eventLayout', {
 //         title: 'Browse local events near you.',

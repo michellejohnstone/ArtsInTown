@@ -4,10 +4,6 @@
         "date" : "March 25, 2017",
         "cost" : "Free", 
         "organizer" : "Band",
-<<<<<<< HEAD
-        "venueName": "Cute Cafe",
-        "address": "125 High Street, Oakland, CA 94608",
-=======
         "venueName": "Octopus Literary Salon",
         "time" : "8",
         "cost" : "Free", 

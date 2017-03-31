@@ -3,6 +3,7 @@ var router = express.Router();
 var ctrlMain = require('../controller/main');
 var ctrlEvent = require('../controller/eventscontrollers');
 var postevents = require('../controller/postevent');
+var ctrlUsers = require('../controller/usercontroller');
 
 
 /* GET home page. */
@@ -30,6 +31,17 @@ router.delete('/viewevent/:eventid', postevents.deleteEvent);
 /*PUT db aka UPDATE*/
 router.put('/viewevent/:eventid', postevents.eventsUpdateOne);
 
+/*USER PROFILES db*/
+/*POST users db*/
+router.post('/users/createuser', ctrlUsers.userCreate);
+/*GET users db*/
+router.get('/users', ctrlUsers.getUsers);
+/*GET one user*/
+router.get('/users/:userid', ctrlUsers.getOneUser);
+/*PUT user db aka UPDATE*/
+router.put('/users/:userid', ctrlUsers.usersUpdateOne);
+
 router.get('/events', ctrlEvent.eventsGetAll);
 router.get('/events/:venueName', ctrlEvent.eventGetOne);
+
 module.exports = router;
