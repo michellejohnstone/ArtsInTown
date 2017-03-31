@@ -53,6 +53,11 @@ var eventSchema = new mongoose.Schema({
         type:[String],
         required: true
     },
+    link: {
+        type: String,
+        required: true,
+        unique: true
+    },
     
     // Add nested schema, reference as an array 
     location:  [locationSchema]
