@@ -17,7 +17,7 @@ module.exports.eventsUpdateOne = function(req, res) {
   console.log(req.params.eventid);
   Events
     .findById(req.params.eventid)
-    .select('name date time cost organizer details tags venueName address zipCode state city streetAddress coords') 
+    .select('name date time cost organizer details tags venueName address zipCode state city streetAddress coords commentAuthor commentContent commentTimestamp') 
     //'-' states that we don't want to retreive
     //from db.
     .exec(
@@ -151,4 +151,19 @@ module.exports.getEvents = function(req, res) {
         .status(200) // set res.status to 200 
         .json(docs); // set res.json to docs 
     });
+};
+
+//GET TAGS
+module.exports.getTags = function(req, res) {
+  console.log('GET all tags');
+  console.log(req.tags.query);
+  
+  Events.collection
+  .find()
+  .toArray(function(err, docs) {
+    console.log("Found tag", docs.length);
+    res
+      .status(200)
+      .json(docs);
+  });
 };

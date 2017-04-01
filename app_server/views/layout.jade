@@ -2,17 +2,15 @@ doctype html
 html(lang='en')
   head
     // Theme Made By www.w3schools.com - No Copyright
-    title Bootstrap Theme The Band
+    title Arts in Town 
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
-
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-
+    link(rel="stylesheet", href='../bootstrap/css/font-awesome.min.css')
+    
     //stylesheet css
     style.
       body {
@@ -232,14 +230,14 @@ html(lang='en')
             li
               a(href='/contact/') CONTACT
             li.dropdown
-              a.dropdown-toggle(data-toggle='dropdown', href='#')
+              a.dropdown-toggle(data-toggle='dropdown')
                 | MORE
                 span.caret
               ul.dropdown-menu
                 li
-                  a(href='#') SIGN IN
+                  a(href='/login/') SIGN IN
                 li
-                  a(href='#') REGISTER
+                  a(href='/register') REGISTER
                 li
                   a(href='#') FAQ
             li
@@ -293,7 +291,6 @@ html(lang='en')
               span.glyphicon.glyphicon-search
               //add functionality to connect to database
               //returns event list page with events meeting criteria
-
     // //   // Modal
     // //   #myModal.modal.fade(role='dialog')
     // //     .modal-dialog
@@ -334,6 +331,11 @@ html(lang='en')
   p
     small &copy; Arts in Town 2017
     // a(href='http://www.w3schools.com', data-toggle='tooltip', title='Visit w3schools') www.w3schools.com
+  
+  // Javascript
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
 script.
   $(document).ready(function(){
   // Initialize Tooltip

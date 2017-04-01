@@ -1,11 +1,17 @@
 var express = require('express');
 var router = express.Router();
+
 var ctrlEvent = require('../controllers/eventscontrollers');
 var postevent = require('../controllers/postevent');
+<<<<<<< HEAD
+var postComment = require('../controllers/postcomment');
 
 //eventcontrollers mongo-db routes??
 router.route('/events').get(ctrlEvent.eventsGetAll);
 router.route('/events/:venueName').get(ctrlEvent.eventGetOne);
+=======
+var ctrlUsers = require('../controllers/usercontroller');
+>>>>>>> 7d1c34b45a22b1affc69fd2954b274acb3088f4f
 
 //eventcontrollers mongo-db routes
 router.get('/events', ctrlEvent.eventsGetAll);
@@ -16,5 +22,24 @@ router.post('/viewevent/', postevent.eventsCreate);
 router.get('/viewevent', postevent.getEvents);
 router.put('/viewevent/:eventid', postevent.eventsUpdateOne);
 router.delete('/viewevent/:eventid', postevent.deleteEvent);
+
+<<<<<<< HEAD
+//postComment CRUD routes
+router.put('/viewevent/:eventid', postComment.commentUpdateOne);
+router.get('/viewevent/:eventid', postComment.getComments);
+router.post('/viewevent/:eventid', postComment.commentCreate);
+router.delete('/viewevent/:eventid', postComment.deleteComment);
+
+=======
+/*USER PROFILES db*/
+/*POST users db*/
+router.post('/users/createuser', ctrlUsers.userCreate);
+/*GET users db*/
+router.get('/users', ctrlUsers.getUsers);
+/*GET one user*/
+router.get('/users/:userid', ctrlUsers.getOneUser);
+/*PUT user db aka UPDATE*/
+router.put('/users/:userid', ctrlUsers.usersUpdateOne);
+>>>>>>> 7d1c34b45a22b1affc69fd2954b274acb3088f4f
 
 module.exports = router;
