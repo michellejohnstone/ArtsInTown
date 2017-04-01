@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 // declare before parent schema
 var locationSchema = new mongoose.Schema({
     venueName:String,
+
     streetAddress: { 
         type: String,
         required: true
@@ -52,6 +53,11 @@ var eventSchema = new mongoose.Schema({
     tags: {
         type:[String],
         required: true
+    },
+    link: {
+        type: String,
+        required: true,
+        unique: true
     },
     
     // Add nested schema, reference as an array 
