@@ -6,12 +6,12 @@ module.exports.postEvent = function(req, res) {
     res.render('postLayout', {title: 'Post Event'});
 };
 
-
 module.exports.contact = function(req, res) {
     res.render('contactLayout', {title: 'Send us a message.'});
 };
 
 module.exports.eventList = function(req, res) {
+    console.log("i'm in event list");
     res.render('eventLayout', {title: 'Events list'});
 };
 
