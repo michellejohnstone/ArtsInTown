@@ -130,6 +130,10 @@ html
               .col-xs-12.col-md-6
                 input#name.form-control(type='name', placeholder='Enter event name')
           .form-group
+              label.col-md-3.control-label(for='cost') Cost:
+              .col-xs-12.col-md-3
+                input#name.form-control(type='cost', placeholder='Enter cost')
+          .form-group
               label.col-md-3.control-label(for='organizer') Event Organizer:
               .col-xs-12.col-md-3
                 input#organizer.form-control(type='organizer', placeholder='Enter event organizer')
@@ -142,10 +146,22 @@ html
                   option Theater
                   option Literature
                   option Cultural
+           .form-group
+              label.col-md-3.control-label(for='location') Event Location:
+              .col-xs-12.col-md-3
+                input.form-control(type='location', placeholder='Location') 
           .form-group
               label.col-md-3.control-label(for='date') Event Date:
               .col-xs-12.col-md-3
-                input.form-control(type='date', placeholder='Date')  
+                input.form-control(type='date', placeholder='Date') 
+          .form-group
+              label.col-md-3.control-label(for='time') Event Time:
+              .col-xs-12.col-md-3
+                input.form-control(type='time', placeholder='Time') 
+          .form-group
+              label.col-md-3.control-label(for='tags') Event Tags:
+              .col-xs-12.col-md-3
+                input.form-control(type='tags', placeholder='Tags') 
           .form-group
               label.col-sm-3.control-label(for='about') Event Detail:
               .col-sm-6
