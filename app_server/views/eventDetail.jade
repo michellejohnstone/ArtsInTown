@@ -8,13 +8,10 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-
     link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet', type='text/css')
-
     link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 
     //stylesheet css
@@ -41,8 +38,6 @@ html(lang='en')
       .container {
       padding: 80px 120px;
       }
-
-
 
       .person {
         border: 10px solid transparent;
@@ -332,9 +327,9 @@ html(lang='en')
             li
               a(href='/') HOME
             li
-              a(href='/events/') FIND EVENTS
+              a(href='/eventList/') FIND EVENTS
             li
-              a(href='#forum') POST EVENT/FIND TICKETS
+              a(href='/post') POST EVENT
             li
               a(href='/contact/') CONTACT
             li.dropdown
@@ -343,9 +338,9 @@ html(lang='en')
                 span.caret
               ul.dropdown-menu
                 li
-                  a(href='#') SIGN IN
+                  a(href='/login') SIGN IN
                 li
-                  a(href='#') REGISTER
+                  a(href='/register') REGISTER
                 li
                   a(href='#') FAQ
             li
@@ -378,6 +373,11 @@ html(lang='en')
         p We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       .col-sm-1.col-md-1.col-lg-1
       .col-sm-3.col-md-3.col-lg-2
+        a#favoriteButton.btn(style='font-size:20px' onclick='javascript:updateBookmarks()')
+          img#bookmark(src='../bootstrap/images/unbooked.png')
+          | &nbspSave This Event&nbsp
+        br
+        br
         h3 Address
         p Cute Cafe
         p 125 High Street
@@ -388,7 +388,7 @@ html(lang='en')
           .panel-heading
             a.btn.btn-default.pull-right(href='/location/review/new') LEAVE A COMMENT
             h2.panel-title COMMENTS
-          .panel-body.review-container
+          .panel-body.comment-container
             .row
               .review
                 .well.well-sm.review-header
@@ -398,8 +398,8 @@ html(lang='en')
                     span.glyphicon.glyphicon-star
                     span.glyphicon.glyphicon-star
                     span.glyphicon.glyphicon-star
-                  span.reviewAuthor Simon Holmes
-                  small.reviewTimestamp 16 July 2013
+                  span.commentAuthor Simon Holmes
+                  small.commentTimestamp 16 July 2013
                 .col-xs-12
                   p What a great place. I can't say enough good things about it.
             .row
@@ -411,12 +411,22 @@ html(lang='en')
                     span.glyphicon.glyphicon-star
                     span.glyphicon.glyphicon-star-empty
                     span.glyphicon.glyphicon-star-empty
-                  span.reviewAuthor Charlie Chaplin
-                  small.reviewTimestamp 16 June 2013
+                  span.commentAuthor Charlie Chaplin
+                  small.commentTimestamp 16 June 2013
                 .col-xs-12
                   p It was okay. Coffee wasn't great, but the wifi was fast.
       .col-sm-6.col-md-6.col-lg-4
         #googleMap
+        script.
+          function updateBookmarks(){
+          var img = document.getElementById('bookmark').src;
+          if (img.indexOf('unbooked.png')!=-1) {
+          document.getElementById('bookmark').src  = '../bootstrap/images/booked.png';
+          }
+          else {
+          document.getElementById('bookmark').src = '../bootstrap/images/unbooked.png';
+          }
+          }
         script.
           function myMap() {
           var myCenter = new google.maps.LatLng(37.7971799,-122.2760126);
