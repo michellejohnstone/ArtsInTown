@@ -13,17 +13,17 @@ var ctrlUsers = require('../controllers/usercontroller');
 router.get('/events', ctrlEvent.eventsGetAll);
 router.get('/events/:venueName', ctrlEvent.eventGetOne);
 
-//postevent CRUD routes
-router.post('/viewevent/', postevent.eventsCreate);
+//post event CRUD routes
+router.post('/viewevent', postevent.eventsCreate);
 router.get('/viewevent', postevent.getEvents);
 router.put('/viewevent/:eventid', postevent.eventsUpdateOne);
 router.delete('/viewevent/:eventid', postevent.deleteEvent);
 
-//postComment CRUD routes
-router.put('/viewevent/:eventid', postComment.commentUpdateOne);
-router.get('/viewevent/:eventid', postComment.getComments);
-router.post('/viewevent/:eventid', postComment.commentCreate);
-router.delete('/viewevent/:eventid', postComment.deleteComment);
+//post comment CRUD routes
+//router.put('/eventDetail/comments/:commentid', postComment.commentUpdateOne);
+router.get('/eventDetail/comments', postComment.getComments);
+router.post('/eventDetail/comments', postComment.commentCreate);
+router.delete('/eventDetail/comments/:commentid', postComment.deleteComment);
 
 /*USER PROFILES db*/
 /*POST users db*/

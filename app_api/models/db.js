@@ -44,5 +44,5 @@ process.on('SIGTERM', function() {
 
 //bring in schemas and models
 require('./events');
-//require('./Comment');
+require('./comments');
 require('./users');
