@@ -1,206 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title></title>
+    <title>Create an account</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--stylesheet css-->
-    <style>
-      body {
-      font: 400 15px/1.8 Lato, sans-serif;
-      color: #777;
-      padding-top: 65px;
-      background: #2d2d30;
-      }
-      h3, h4 {
-      margin: 10px 0 30px 0;
-      letter-spacing: 10px;
-      font-size: 20px;
-      color: #111;
-      }
-      .bg-1 {
-      background: #2d2d30;
-      color: #bdbdbd;
-      }
-      .bg-1 h3 {color: #fff;}
-      .bg-1 p {font-style: italic;}
-      .list-group-item:first-child {
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
-      }
-      .navbar {
-      font-family: Montserrat, sans-serif;
-      margin-bottom: 0;
-      background-color: #2d2d30;
-      border: 0;
-      font-size: 11px !important;
-      letter-spacing: 4px;
-      opacity: 0.9;
-      }
-      .navbar li a, .navbar .navbar-brand {
-      color: #d5d5d5 !important;
-      }
-      .navbar-nav li a:hover {
-      color: #fff !important;
-      }
-      .navbar-nav li.active a {
-      color: #fff !important;
-      background-color: #29292c !important;
-      }
-      .navbar-default .navbar-toggle {
-      border-color: transparent;
-      }
-      .open .dropdown-toggle {
-      color: #fff;
-      background-color: #555 !important;
-      }
-      .dropdown-menu li a {
-      color: #000 !important;
-      }
-      .dropdown-menu li a:hover {
-      background-color: red !important;
-      }
-      footer {
-      background-color: #2d2d30;
-      color: #f5f5f5;
-      padding: 32px;
-      }
-      footer a {
-      color: #f5f5f5;
-      }
-      footer a:hover {
-      color: #777;
-      text-decoration: none;
-      }
-      .form-control {
-      border-radius: 0;
-      }
-      textarea {
-      resize: none;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='../bootstrap/css/font-awesome.css'>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='../bootstrap/css/form-elements.css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') -->
   </head>
-  <!-- THE NAV BAR-->
-  <body id="forum" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="nav navbar navbar-default navbar-fixed-top">
+ 
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target="#myNavbar" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Arts In Town</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/">Arts In Town</a>
         </div>
-        <div id="myNavbar" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">HOME</a></li>
-            <li><a href="/eventlist">FIND EVENTS</a></li>
+            <li><a href="/eventList/">FIND EVENTS</a></li>
             <li><a href="/post/">POST EVENT</a></li>
             <li><a href="/contact/">CONTACT</a></li>
-            <li class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle">MORE<span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">MORE<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/login">SIGN IN</a></li>
-                <li><a href="/register">REGISTER</a></li>
+                <li><a href="/login/">SIGN IN</a></li>
+                <li><a href="#">REGISTER</a></li>
                 <li><a href="#">FAQ</a></li>
               </ul>
             </li>
-            <li>     </li>
           </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Top content-->
+    <div class="top-content">
+      <div class="inner-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3>Create an Account</h3>
+                  <p>Already have one? </p><a href="/login">Sign In</a>
+                </div>
+                <div class="form-top-right"><i class="fa fa-pencil"></i></div>
+              </div>
+              <div class="form-bottom">
+                <form class="login-form" role="form" action="" method="post">
+                  <div class="form-group">
+                    <label class="sr-only" for="firstname">First Name</label>
+                    <input class="form-firstname form-control" id="form-firstname" type="text" name="firstname" placeholder="First name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="lastname">Last Name</label>
+                    <input class="form-lastname form-control" id="form-lastname" type="text" name="lastname" placeholder="Last name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="email">Email</label>
+                    <input class="form-email form-control" id="form-email" type="text" name="email" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="username">Username</label>
+                    <input class="form-username form-control" id="form-username" type="text" name="form-username" placeholder="Username" required>
+                  </div>
+                  <div class="form-group"> 
+                    <label class="sr-only" for="password">Password</label>
+                    <input class="form-password form-control" id="form-password" type="password" name="form-password" placeholder="Password" required>
+                  </div>
+                  <button class="btn" type="submit">REGISTER</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </body>
+  <footer class="text-center"><a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP"><span class="glyphicon glyphicon-chevron-up"></span></a><br>
+    <p><small>&copy; Arts in Town 2017
+        <!-- Javascript--></small></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../javascripts/jquery.backstretch.min.js"></script>
+    <script src="../javascripts/scripts.js"></script>
+    <!--if lt IE 10script(src='assets/js/placeholder.js')
+    -->
+  </footer>
 </html>
-<!-- HEADER -> START OF FORM-->
-<div id="forum" class="bg-1">
-  <h3 class="text-center">POST AN EVENT TO ARTS-IN-TOWN</h3>
-  <p class="text-center">Let's get started!
-    <div class="col-xs-12 col-md-12">
-      <form class="form-horizontal">
-        <div class="form-group">
-          <label for="name" class="col-md-3 control-label">Event name:</label>
-          <div class="col-xs-12 col-md-6">
-            <input id="name" type="name" placeholder="Enter event name" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="cost" class="col-md-3 control-label">Cost:</label>
-          <div class="col-xs-12 col-md-3">
-            <input id="name" type="cost" placeholder="Enter cost" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="organizer" class="col-md-3 control-label">Event Organizer:</label>
-          <div class="col-xs-12 col-md-3">
-            <input id="organizer" type="organizer" placeholder="Enter event organizer" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="type" class="col-md-3 control-label">Event type:</label>
-          <div class="col-xs-12 col-md-3">
-            <select id="type" name="type" class="form-control input-sm">
-              <option>Music</option>
-              <option>Art</option>
-              <option>Theater</option>
-              <option>Literature</option>
-              <option>Cultural</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="location" class="col-md-3 control-label">Event Location:</label>
-          <div class="col-xs-12 col-md-3">
-            <input type="location" placeholder="Location" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="date" class="col-md-3 control-label">Event Date:</label>
-          <div class="col-xs-12 col-md-3">
-            <input type="date" placeholder="Date" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="time" class="col-md-3 control-label">Event Time:</label>
-          <div class="col-xs-12 col-md-3">
-            <input type="time" placeholder="Time" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="tags" class="col-md-3 control-label">Event Tags:</label>
-          <div class="col-xs-12 col-md-3">
-            <input type="tags" placeholder="Tags" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="about" class="col-sm-3 control-label">Event Detail:</label>
-          <div class="col-sm-6">
-            <textarea id="about" name="about" rows="5" class="form-control"></textarea>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-3">
-              <button class="btn btn-default pull-right">Add event</button>
-            </div>
-            <div class="col-xs-3"></div>
-          </div>
-        </div>
-      </form>
-    </div>
-    <!-- Footer-->
-    <footer class="text-center"><a href="#forum" data-toggle="tooltip" title="TO TOP" class="up-arrow"><span class="glyphicon glyphicon-chevron-up"></span></a><br>
-      <p><small>&copy; Arts in Town 2017</small></p>
-    </footer>
-  </p>
-</div>
 <script>
   $(document).ready(function(){
   // Initialize Tooltip
   $('[data-toggle="tooltip"]').tooltip();
   // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#forum']").on('click', function(event) {
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
   // Prevent default anchor click behavior
