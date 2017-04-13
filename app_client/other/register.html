@@ -1,30 +1,26 @@
-doctype html
-html(lang='en')
-  head
-    title Login Form
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-
-    link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet', type='text/css')
-
-    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create an account</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- link(rel="stylesheet", href='../bootstrap/css/font-awesome.css')-->
+    <link rel="stylesheet" href="../bootstrap/css/form-elements.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-    
-    link(rel='stylesheet', href='../bootstrap/css/form-elements.css')
-    //link(rel='stylesheet', href='assets/css/style.css')
-    
-    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    // WARNING: Respond.js doesn't work if you view the page via file://
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-    
-  //CSS
-  style.
+    -->
+  </head>
+  <!--CSS-->
+  <style>
     body {
       font: 400 15px/1.8 Lato, sans-serif;
       font-size: 16px;
@@ -57,7 +53,11 @@ html(lang='en')
         line-height: 30px;
     }
     
-    img { max-width: 100%; }
+    img { 
+      max-width: 100%;
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+    }
     
     ::-moz-selection { background: #de615e; color: #fff; text-shadow: none; }
     ::selection { background: #de615e; color: #fff; text-shadow: none; }
@@ -263,87 +263,87 @@ html(lang='en')
     	h1, h2 { font-size: 32px; }
     
     }
-  
-  body#myPage(data-spy='scroll', data-target='.navbar', data-offset='50')
-    nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='/') Arts In Town
-        #myNavbar.collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/') HOME
-            li
-              a(href='/eventList/') FIND EVENTS
-            li
-              a(href='/post/') POST EVENT/FIND TICKETS
-            li
-              a(href='/contact/') CONTACT
-            li.dropdown
-              a.dropdown-toggle(data-toggle='dropdown')
-                | MORE
-                span.caret
-              ul.dropdown-menu
-                li
-                  a(href='/login/') SIGN IN
-                li
-                  a(href='/register/') REGISTER
-                li
-                  a(href='#') FAQ
-    // Top content
-    .top-content
-      .inner-bg
-        .container
-          .row
-            .col-sm-6.col-sm-offset-3.form-box
-              .form-top
-                .form-top-left
-                  h3 Sign in
-                  p
-                    a(href="/register") Need an account?
-                .form-top-right
-                  i.fa.fa-lock
-              .form-bottom
-                form.login-form(role='form', action='', method='post')
-                  .form-group
-                    label.sr-only(for='form-username') Username
-                    input#form-username.form-username.form-control(type='text', name='form-username', placeholder='Username')
-                  .form-group
-                    label.sr-only(for='form-password') Password
-                    input#form-password.form-password.form-control(type='password', name='form-password', placeholder='Password')
-                  button.btn(type='submit') Sign in!
-                  p
-                    a(href="/userProfile") Forgot your password?
-          .row
-            .col-sm-6.col-sm-offset-3.social-login
-              h3 ...or login with:
-              .social-login-buttons
-                a.btn.btn-link-2(href='#')
-                  i.fa.fa-twitter
-                  |  Twitter
-                a.btn.btn-link-2(href='#')
-                  i.fa.fa-google
-                  |  Google 
-  footer.text-center
-    a.up-arrow(href='#myPage', data-toggle='tooltip', title='TO TOP')
-      span.glyphicon.glyphicon-chevron-up
-    br
-    p
-      small &copy; Arts in Town 2017
-      
-    // Javascript
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    script(src='../javascripts/jquery.backstretch.min.js')
-    script(src='../javascripts/scripts.js')
     
-    //if lt IE 10
-      script(src='assets/js/placeholder.js')
-script.
+  </style>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/">Arts In Town</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/eventList/">FIND EVENTS</a></li>
+            <li><a href="/post/">POST EVENT/FIND TICKETS</a></li>
+            <li><a href="/contact/">CONTACT</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">MORE<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/login/">SIGN IN</a></li>
+                <li><a href="#">REGISTER</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Top content-->
+    <div class="top-content">
+      <div class="inner-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3>Create account</h3>
+                  <p>Already have one? </p><a href="/login">Sign In</a>
+                </div>
+                <div class="form-top-right"><i class="fa fa-pencil"></i></div>
+              </div>
+              <div class="form-bottom">
+                <form class="login-form" role="form" action="" method="post">
+                  <div class="form-group">
+                    <label class="sr-only" for="firstname">First Name</label>
+                    <input class="form-firstname form-control" id="form-firstname" type="text" name="firstname" placeholder="First name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="lastname">Last Name</label>
+                    <input class="form-lastname form-control" id="form-lastname" type="text" name="lastname" placeholder="Last name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="email">Email</label>
+                    <input class="form-email form-control" id="form-email" type="text" name="email" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="username">Username</label>
+                    <input class="form-username form-control" id="form-username" type="text" name="form-username" placeholder="Username" required>
+                  </div>
+                  <div class="form-group"> 
+                    <label class="sr-only" for="password">Password</label>
+                    <input class="form-password form-control" id="form-password" type="password" name="form-password" placeholder="Password" required>
+                  </div>
+                  <button class="btn" type="submit">REGISTER</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer class="text-center"><a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP"><span class="glyphicon glyphicon-chevron-up"></span></a><br>
+    <p><small>&copy; Arts in Town 2017
+        <!-- Javascript--></small></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../javascripts/jquery.backstretch.min.js"></script>
+    <script src="../javascripts/scripts.js"></script>
+    <!--if lt IE 10script(src='assets/js/placeholder.js')
+    -->
+  </footer>
+</html>
+<script>
   $(document).ready(function(){
   // Initialize Tooltip
   $('[data-toggle="tooltip"]').tooltip();
@@ -366,3 +366,4 @@ script.
   } // End if
   });
   })
+</script>
