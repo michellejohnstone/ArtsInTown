@@ -6,6 +6,44 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
+//CREATE NEW EVENT
+module.exports.eventsCreate = function(req, res) {
+  if (!req.params.body) {
+    sendJSONresponse(res, 404, {
+      "message": "Not found"
+    });
+    return;
+  }
+  console.log(req.body);
+  console.log("create event");
+  Events.create({
+    name: req.body.name,
+    date: req.body.date,
+    time: req.body.time,
+    cost: req.body.cost,
+    organizer: req.body.organizer,
+    details: req.body.details,
+    tags: req.body.tags,
+    location: [{
+      venueName: req.body.venueName,
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      state: req.body.state,
+      zipCode: req.body.zipCode,
+      coords: [parseFloat(req.body.lng), parseFloat(req.body.lat)]
+    }]
+  }, function(err, location) {
+    if (err) {
+      console.log(err);
+      sendJSONresponse(res, 400, err);
+    }
+    else {
+      console.log(location);
+      sendJSONresponse(res, 201, location);
+    }
+  });
+};
+
 //UPDATE AN EXISTING EVENT
 module.exports.eventsUpdateOne = function(req, res) {
   if (!req.params.eventid) {
@@ -104,37 +142,6 @@ module.exports.deleteEvent = function(req, res) {
   }
 };
 
-//CREATE NEW EVENT
-module.exports.eventsCreate = function(req, res) {
-  console.log(req.body);
-  console.log("create events");
-  Events.create({
-    name: req.body.name,
-    date: req.body.date,
-    time: req.body.time,
-    cost: req.body.cost,
-    organizer: req.body.organizer,
-    details: req.body.details,
-    tags: req.body.tags,
-    location: [{
-      venueName: req.body.venueName,
-      streetAddress: req.body.streetAddress,
-      city: req.body.city,
-      state: req.body.state,
-      zipCode: req.body.zipCode,
-      coords: [parseFloat(req.body.lng), parseFloat(req.body.lat)]
-    }]
-  }, function(err, location) {
-    if (err) {
-      console.log(err);
-      sendJSONresponse(res, 400, err);
-    }
-    else {
-      console.log(location);
-      sendJSONresponse(res, 201, location);
-    }
-  });
-};
 
 //GET ALL EVENTS
 module.exports.getEvents = function(req, res) {

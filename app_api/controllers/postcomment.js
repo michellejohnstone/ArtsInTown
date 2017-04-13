@@ -8,6 +8,7 @@ var sendJSONresponse = function(res, status, content) {
 
 //UPDATE AN EXISTING COMMENT
 module.exports.commentUpdateOne = function(req, res) {
+  console.log("in comment update");
   if (!req.params.commentid) {
     sendJSONresponse(res, 404, {
       "message": "Not found, commentid is required"
@@ -32,6 +33,7 @@ module.exports.commentUpdateOne = function(req, res) {
           return;
         }
         if (req.body.commentAuthor !== undefined) {
+          console.log("in if");
            comment.commentAuthor = req.body.commentAuthor;
          }
         if (req.body.commentContent !== undefined) {
@@ -54,6 +56,7 @@ module.exports.commentUpdateOne = function(req, res) {
 //DELETE A COMMENT
 module.exports.deleteComment = function(req, res) {
   var commentid = req.params.commentid;
+  console.log(commentid);
   if (commentid) {
     Comments
       .findByIdAndRemove(commentid)
@@ -78,8 +81,7 @@ module.exports.deleteComment = function(req, res) {
 
 //CREATE NEW COMMENT
 module.exports.commentCreate = function(req, res) {
-  console.log(req.body);
-  console.log("create comments");
+  console.log("create comment");
   Comments.create({
     commentAuthor: req.body.commentAuthor,
     commentContent: req.body.commentContent,
@@ -104,7 +106,7 @@ module.exports.getComments = function(req, res) {
   Comments.collection
     .find()
     .toArray(function(err, docs) {
-      // error says if query failed
+      // error says ifn query failed
       // docs is the query result, an array
       console.log("Found comment", docs.length);
       res
