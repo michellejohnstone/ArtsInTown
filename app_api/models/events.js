@@ -65,19 +65,7 @@ var eventSchema = new mongoose.Schema({
     
 });
 
-var commentSchema = new mongoose.Schema({
-    commentAuthor: {
-        type: String,
-        required: true
-    },
-    commentContent: {
-        type: String,
-        required: true
-    },
-    //needs to be autogen, for now wil have String as placeholder
-    commentTimeStamp: String,
-});
+
 // model name, schema name, collection name (optional)
 // collection name will be events by default 
 mongoose.model('Event', eventSchema);
-mongoose.model('Comment', commentSchema);
