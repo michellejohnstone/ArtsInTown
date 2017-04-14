@@ -26,7 +26,8 @@ var createUserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    bookmarks: [String]
+    bookmarks: [String],
+    events: [String]
 });
 
 

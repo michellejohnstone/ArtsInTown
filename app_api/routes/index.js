@@ -4,10 +4,11 @@ var router = express.Router();
 var ctrlEvent = require('../controllers/eventscontrollers');
 var postevent = require('../controllers/postevent');
 var postComment = require('../controllers/postcomment');
+var ctrlUsers = require('../controllers/usercontroller');
 
 router.route('/events').get(ctrlEvent.eventsGetAll);
 router.route('/events/:venueName').get(ctrlEvent.eventGetOne);
-var ctrlUsers = require('../controllers/usercontroller');
+
 
 //eventcontrollers mongo-db routes
 router.get('/events', ctrlEvent.eventsGetAll);
@@ -34,5 +35,7 @@ router.get('/users', ctrlUsers.getUsers);
 router.get('/users/:userid', ctrlUsers.getOneUser);
 /*PUT user db aka UPDATE*/
 router.put('/users/:userid', ctrlUsers.usersUpdateOne);
+/* DELETE user in db */
+router.delete('/users/:userid', ctrlUsers.deleteUser);
 
 module.exports = router;
