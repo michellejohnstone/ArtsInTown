@@ -11,8 +11,19 @@
       .when('/eventdetail', { templateUrl: 'other/eventDetail.html' })
       .when('/post', { templateUrl: 'other/postLayout.html' })
       .when('/contact', { templateUrl: 'other/contactLayout.html' })
-      .when('/login', { templateUrl: 'other/login.html' })
-      .when('/register', { templateUrl: 'other/register.html' })
-      .when('/userprofile', { templateUrl: 'other/userProfile.html' })
+      .when('/login', { templateUrl: 'other/login.html', })
+      
+      .when('/register', { 
+        templateUrl: 'other/register.html',
+        controller: 'CreateUserController', controllerAs: 'creUsrCon' })
+        
+      .when('/userprofile', {
+        templateUrl: 'other/userProfile.html'})
+
+      .when('/userprofile/:id', {
+        templateUrl: 'other/userProfile.html',
+        controller: "GetOneUserProfileController", controllerAs: 'oneuserCon'})
+        
+      .otherwise( { redirectTo: '/'});
   }
 })();
