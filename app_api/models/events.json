@@ -28,7 +28,7 @@
         "date" : "March 31, 2017",
         "cost" : "Donation", 
         "venueName": "Odd Ball Gallery",
-        "address": "2000 4th St, Berkeley, CA 94710" },
+        "streetAddress": "2000 4th St, Berkeley, CA 94710" },
     { 
         "name" : "BEER AND GUITARS", 
         "date" : "April 7, 2017",

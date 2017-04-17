@@ -6,12 +6,14 @@ var postevent = require('../controllers/postevent');
 var postComment = require('../controllers/postcomment');
 
 router.route('/events').get(ctrlEvent.eventsGetAll);
-router.route('/events/:venueName').get(ctrlEvent.eventGetOne);
+//changed in iteration 7
+router.route('/events/:eventid').get(ctrlEvent.eventGetOne);
 var ctrlUsers = require('../controllers/usercontroller');
 
 //eventcontrollers mongo-db routes
 router.get('/events', ctrlEvent.eventsGetAll);
-router.get('/events/:venueName', ctrlEvent.eventGetOne);
+//changed in iteration 7
+router.get('/events/:eventid', ctrlEvent.eventGetOne);
 
 //post event CRUD routes
 router.post('/viewevent', postevent.eventsCreate);
