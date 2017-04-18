@@ -3,14 +3,14 @@
     angular.module('myApp').controller('EventDetailController', EventDetailController);
         
     //EventDetailController.$inject = ['$routeParams', '$modal', "$http"]; 
-    function EventDetailController ($http, $routeParams) {
+    function EventDetailController ($http, $routeParams, $scope) {
         var vm = this; 
         
         //Kristen - for testing
         vm.name = 'Kc';
         
         //array to save data from get response
-        var resultArr = [];
+        $scope.resultArr = [];
         
         //vm.venueName = $routeParams.venueName //let's change this once we have routes for each event to :eventid
        
@@ -27,16 +27,10 @@
         //KC - changed data to response
         //KC - changed route to events/:eventid
         $http.get('/api/events/' + eventid).then(function(response) { 
-            vm.oneEvent = response.data; 
-            angular.forEach(vm.oneEvent, function(value, index){
-              resultArr.push(value);  
-            })
-            vm.eventName = resultArr[1];
-            vm.date = resultArr[2];
-            vm.cost = resultArr[3];
-            vm.venueName = resultArr[4];
-            vm.city = resultArr[5];
-            
+            $scope.oneEvent = response.data; 
+            // angular.forEach(vm.oneEvent, function(value, index){
+            //   $scope.resultArr.push(value);  
+            // })
     //      vm.data = { eventid : data }; 
     //      //MJ: I'm not sure how to pull the venueName name from the schema/model in events.js
     //      vm.pageHeader = {
