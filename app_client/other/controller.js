@@ -4,7 +4,8 @@
   
   angular.module('myApp').controller('UserController', UsrController);
   angular.module('myApp').controller('CreateUserController', CreateUserController);
-  angular.module('myApp').controller('GetOneUserProfileController', GetOneUserProfileController);
+  angular.module('myApp').controller('GetOneUserProfileController', ['$scope', '$http', 
+  '$routeParams', GetOneUserProfileController]);
 
   
   
@@ -40,14 +41,14 @@
   }
     
     
-  function GetOneUserProfileController($http, $routeParams) {
+  function GetOneUserProfileController($scope, $http, $routeParams) {
       var vm = this;
       
       var id = $routeParams.id;
       
       $http.get('api/users/' + id)
-      .then(function(response) {
-          vm.users = response.data;
+      .success(function(response) {
+         $scope.users = data[$routeParams.id];
       });
       
       vm.deleteUser = function() {
