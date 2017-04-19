@@ -17,9 +17,10 @@
           <!-- SIDEBAR MENU-->
           <div class="profile-usermenu">
             <ul class="nav">
-              <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i>Events</a></li>
+              <li class="active"><a href="#"><i class="glyphicon glyphicon-calendar"></i>Events</a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-bookmark"></i>Bookmarks</a></li>
               <li><a href="#"><i class="glyphicon glyphicon-user"></i>Account Settings</a></li>
-              <li><a href="#" target="_blank"><i class="glyphicon glyphicon-flag"></i>Help</a></li>
+              <li><a href="/"><i class="glyphicon glyphicon-log-out"></i>Log out</a></li>
             </ul>
           </div>
           <!-- END MENU-->
@@ -27,8 +28,12 @@
       </div>
       <div class="col-md-9">
         <div class="profile-content">
-          <h3>Bookmarks</h3>
-          <p>  </p>
+          <h3>Events</h3>
+          <ul>
+            <li ng-repeat="e in allevntCon.user">
+              <p> {{ oneuserCon.users.events}} </p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

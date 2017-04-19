@@ -28,7 +28,7 @@ router.delete('/eventDetail/comments/:commentid', postComment.deleteComment);
 
 /*USER PROFILES db*/
 /*POST users db*/
-router.post('/users/createuser', ctrlUsers.userCreate);
+// router.post('/users/createuser', ctrlUsers.userCreate);
 /*GET users db*/
 router.get('/users', ctrlUsers.getUsers);
 /*GET one user*/
@@ -37,5 +37,10 @@ router.get('/users/:userid', ctrlUsers.getOneUser);
 router.put('/users/:userid', ctrlUsers.usersUpdateOne);
 /* DELETE user in db */
 router.delete('/users/:userid', ctrlUsers.deleteUser);
+
+// Authentication
+router.post('/register', ctrlUsers.register);
+router.post('/login', ctrlUsers.login);  
+
 
 module.exports = router;
