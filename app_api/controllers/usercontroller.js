@@ -61,6 +61,33 @@ module.exports.userCreate = function(req, res) {
   });
 };
 
+
+//DELTE ONE USER BY ID 
+module.exports.deleteUser = function(req, res) {
+  var userid = req.params.userid;
+  if (userid) {
+    User
+      .findByIdAndRemove(userid)
+      .exec(
+        function(err, location) {
+          if (err) {
+            console.log(err);
+            sendJSONresponse(res, 404, err);
+            return;
+          }
+          console.log("User id " + userid + " deleted");
+          sendJSONresponse(res, 204, null);
+        }
+      );
+  }
+  else {
+    sendJSONresponse(res, 404, {
+      "message": "No userid"
+    });
+  }
+};
+
+
 //UPDATE AN EXISTING USER
 module.exports.usersUpdateOne = function(req, res) {
   if (!req.params.userid) {
