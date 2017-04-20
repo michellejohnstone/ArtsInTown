@@ -15,7 +15,7 @@ router.get('/events', ctrlEvent.eventsGetAll);
 router.get('/events/:venueName', ctrlEvent.eventGetOne);
 
 //post event CRUD routes
-router.post('/viewevent', postevent.eventsCreate);
+router.post('/viewevent', postevent.createOne);
 router.get('/viewevent', postevent.getEvents);
 router.put('/viewevent/:eventid', postevent.eventsUpdateOne);
 router.delete('/viewevent/:eventid', postevent.deleteEvent);
