@@ -6,15 +6,7 @@ var postevent = require('../controllers/postevent');
 var postComment = require('../controllers/postcomment');
 var ctrlUsers = require('../controllers/usercontroller');
 
-router.route('/events').get(ctrlEvent.eventsGetAll);
-<<<<<<< HEAD
 router.route('/events/:venueName').get(ctrlEvent.eventGetOne);
-
-=======
-//changed in iteration 7
-router.route('/events/:eventid').get(ctrlEvent.eventGetOne);
-var ctrlUsers = require('../controllers/usercontroller');
->>>>>>> 9cd1a71f9a1e7c553aa19d5780ad3985c788fb65
 
 //eventcontrollers mongo-db routes
 router.get('/events', ctrlEvent.eventsGetAll);
@@ -47,6 +39,6 @@ router.delete('/users/:userid', ctrlUsers.deleteUser);
 
 // Authentication
 router.post('/register', ctrlUsers.register);
-router.post('/login', ctrlUsers.login);  
+router.post('/login', ctrlUsers.login);
 
 module.exports = router;
