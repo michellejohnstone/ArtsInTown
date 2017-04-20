@@ -9,7 +9,7 @@ var routesApi = require('./app_api/routes/index');
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views'));
+app.set('views', path.join(__dirname, 'app_client', 'other'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
