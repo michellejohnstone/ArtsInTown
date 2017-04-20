@@ -26,6 +26,27 @@ var locationSchema = new mongoose.Schema({
     coords: {type: [Number], index: '2dsphere'}, 
 });
 
+var commentSchema = new mongoose.Schema({
+    commentAuthor: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Number,
+        required: false,
+        min:0, 
+        max: 5
+    },
+    commentContent: {
+        type: String,
+        required: true
+    },
+    //needs to be autogen, for now wil have String as placeholder
+    commentTimeStamp: {
+        type: Date, 
+        "default": Date.now
+    },
+});
 
 // parent schema
 var eventSchema = new mongoose.Schema({
@@ -61,8 +82,9 @@ var eventSchema = new mongoose.Schema({
     },
     
     // Add nested schema, reference as an array 
-    location:  [locationSchema], 
+    location:  [locationSchema],
     
+    comment: [commentSchema]
 });
 
 
