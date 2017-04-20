@@ -36,6 +36,9 @@ module.exports.commentUpdateOne = function(req, res) {
           console.log("in if");
            comment.commentAuthor = req.body.commentAuthor;
          }
+         if (req.body.rating !== undefined) {
+           comment.rating = req.body.rating;
+         }
         if (req.body.commentContent !== undefined) {
           comment.commentContent = req.body.commentContent;
         }
@@ -84,6 +87,7 @@ module.exports.commentCreate = function(req, res) {
   console.log("create comment");
   Comments.create({
     commentAuthor: req.body.commentAuthor,
+    rating: req.body.rating,
     commentContent: req.body.commentContent,
     commentTimestamp: req.body.commentTimestamp,
   }, function(err, location) {
