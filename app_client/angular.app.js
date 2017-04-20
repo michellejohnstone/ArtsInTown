@@ -11,7 +11,10 @@
       
       .when('/eventdetail', { templateUrl: 'other/eventDetail.html' })
       
-      .when('/post', { templateUrl: 'other/postLayout.html' })
+      .when('/post', {
+        templateUrl: 'postevent/postevent.html',
+        controller: 'PostEventController',
+        controllerAs: 'postEventCon' })
       
       .when('/contact', { templateUrl: 'other/contactLayout.html' })
       
