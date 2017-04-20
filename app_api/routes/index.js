@@ -42,5 +42,4 @@ router.delete('/users/:userid', ctrlUsers.deleteUser);
 router.post('/register', ctrlUsers.register);
 router.post('/login', ctrlUsers.login);  
 
-
 module.exports = router;
