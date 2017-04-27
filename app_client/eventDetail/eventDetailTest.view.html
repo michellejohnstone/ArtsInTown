@@ -2,7 +2,7 @@
 <div ng-app="myApp">
 <head>
     <script src="angular.min.js">  </script> 
-    <script src="eventDetailController.js"> </script>
+    <script src="eventDetail.controller.js"> </script>
 </head>    
 
 <div ng-controller="EventDetailController">
@@ -353,31 +353,103 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-8">
+      <!--*******COMMENTS*******************************************************************-->
+       <div class="col-sm-6 col-md-6 col-lg-8">
         <div class="panel panel-primary review-panel">
-          <div class="panel-heading"><a href="/eventdetail/comments" class="btn btn-default pull-right">LEAVE A COMMENT</a>
-            <h2 class="panel-title">COMMENTS</h2>
+          <div class="panel-heading">
+            <!--<a href="/eventdetail/comments" class="btn btn-default pull-right">LEAVE A COMMENT</a>-->
+            <a class="panel-title" ng-click="showComments = !showComments">COMMENTS</a>
           </div>
-          <div class="panel-body comment-container">
-            <div class="row">
-              <div class="review">
-                <div class="well well-sm review-header"><span class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></span><span class="commentAuthor">Simon Holmes</span><small class="commentTimestamp">16 July 2013</small></div>
-                <div class="col-xs-12">
-                  <p>What a great place. I can't say enough good things about it.</p>
+              <!--*****EXPAND COMMENTS******* -->
+              <div ng-show="showComments" class>
+                <div class="panel-body comment-container">
+                  <!-- EXISTING COMMENTS --> 
+                    <div ng-repeat="comment in eventComments">
+                      <div class="row">
+                          <div class="well well-sm review-header">
+                            <span class = "comment-author">
+                              posted by {{comment.author}}
+                            </span>
+                          </div>  
+                          <div class="col-xs-12">
+                            <span class = "show-comment">
+                              {{comment.body}}
+                            </span>
+                            <br>
+                            <span class = "created">
+                             created at {{comment.created}}
+                            </span>
+                          <hr>
+                          </div>
+                    <!--Cait's code for deleting a comment-->
+                    <!--<span ng-show = "isLoggedIn() && ownershipCheck(post)">-->
+                    <!--  <i class =  "fa fa-trash delete" ng-click = "deleteComment(post, comment)"></i>-->
+                    <!--</span>-->
+                      </div>
+                    </div>
+                    <!-- END EXISTING COMMENTS --> 
+                    <!-- FORM -->
+                    <div class = "text-center"> 
+                      <form ng-submit="addComment()" style="margin-top:30px;">
+                        <!--change when page is running-->
+                        <span class="add-comment-title" ng-click="showAddComment = !showAddComment">Add a New Comment</span>
+                        <!--<span class="add-comment-title">Add a New Comment</span>-->
+                        <!--change when page is running-->
+                        <div ng-show="showAddComment" class="form-group">
+                        <!--<div class="form-group">-->
+                          <label for="author" class="col-xs-2 col-sm-2 control-label">Name</label>
+                          <div class="col-xs-10 col-sm-10">
+                            <input id="author" required="required" ng-model="author" class="form-control"/>
+                          </div>
+                          <hr>
+                          <hr>
+                          <div class = "form-group add-comment">
+                            <textarea class = "form-control" rows="5" ng-model = "body"></textarea>
+                          </div>
+                          <button type = "submit" class = "btn btn-primary">Post</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- END FORM -->
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="review">
-                <div class="well well-sm review-header"><span class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></span><span class="commentAuthor">Charlie Chaplin</span><small class="commentTimestamp">16 June 2013</small></div>
-                <div class="col-xs-12">
-                  <p>It was okay. Coffee wasn't great, but the wifi was fast.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              <!-- ***END EXPAND COMMENTS******************* -->
         </div>
       </div>
+    </div>
+    </div>
+  </div>
+      <!--****OLDCODE*****-->
+      <!--<div class="col-sm-6 col-md-6 col-lg-8">-->
+      <!--  <div class="panel panel-primary review-panel">-->
+      <!--    <div class="panel-heading"><a href="/eventdetail/comments" class="btn btn-default pull-right">LEAVE A COMMENT</a>-->
+      <!--      <h2 class="panel-title">COMMENTS</h2>-->
+      <!--    </div>-->
+      <!--    <div class="panel-body comment-container">-->
+      <!--      <div class="row">-->
+      <!--        <div class="review">-->
+      <!--          <div class="well well-sm review-header"><span class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></span><span class="commentAuthor">Simon Holmes</span><small class="commentTimestamp">16 July 2013</small></div>-->
+      <!--          <div class="col-xs-12">-->
+      <!--            <p>What a great place. I can't say enough good things about it.</p>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="row">-->
+      <!--        <div class="review">-->
+      <!--          <div class="well well-sm review-header"><span class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></span><span class="commentAuthor">Charlie Chaplin</span><small class="commentTimestamp">16 June 2013</small></div>-->
+      <!--          <div class="col-xs-12">-->
+      <!--            <p>It was okay. Coffee wasn't great, but the wifi was fast.</p>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--    </div>-->
+      <!--  </div>-->
+      <!--</div>-->
+      <!--****END OLDCODE****-->
+      
+       <!--*******END COMMENTS*******************************************************************-->
+       
+       <!--*******GOOGLEMAP*******************************************************************-->
       <div class="col-sm-6 col-md-6 col-lg-4">
         <div id="googleMap"></div>
         <script>
