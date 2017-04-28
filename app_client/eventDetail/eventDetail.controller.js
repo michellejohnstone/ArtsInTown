@@ -38,23 +38,13 @@
                 body: $scope.body, 
                 created: Date.now(),
             };
-            // $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).then(function(response){
-            //     angular.forEach($scope.getResponse, function(value,index){
-            //       console.log($scope.getResponse);
-            //       console.log(value);
-            //       $scope.eventComments.push(value);
-                  
-            //   })
-            // });
+
             $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).success(function(comment){
               $scope.eventComments.push(comment);
             });
-            $scope.commentForm.$setPristine();
-            $scope.currentRecord = {};
+            // $scope.commentForm.$setPristine();
+            // $scope.currentRecord = {};
         };
-        
-        // console.log($scope.eventComments.indexOf(comment));
-        // var commentIndex = $scope.eventComments.indexOf(comment);
         
         $scope.deleteComment = function(comment) {
           var commentIndex = $scope.eventComments.indexOf(comment);
