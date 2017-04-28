@@ -393,7 +393,7 @@
                     <!-- END EXISTING COMMENTS --> 
                     <!-- FORM -->
                     <div class = "text-center"> 
-                      <form ng-submit="addComment()" style="margin-top:30px;">
+                      <form ng-model="commentForm" ng-submit="addComment()" style="margin-top:30px;">
                         <!--change when page is running-->
                         <span class="add-comment-title" ng-click="showAddComment = !showAddComment"><i class="fa fa-pencil"></i>  Add a New Comment</span>
                         <!--<span class="add-comment-title">Add a New Comment</span>-->
