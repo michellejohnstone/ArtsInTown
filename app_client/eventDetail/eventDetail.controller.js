@@ -30,7 +30,6 @@
         //Gets the comments in the DB and displays them on the page
         $http.get('/api/viewevent/' + $routeParams.eventid + '/comments').then(function(response){
             $scope.eventComments = response.data;
-            console.log($scope.eventComments);
         });
         $scope.addComment = function() {
             //read data from form 
@@ -39,27 +38,23 @@
                 body: $scope.body, 
                 created: Date.now(),
             };
-            $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).then(function(response){
-                // console.log($scope.getResponse);
-                // console.log($scope.value);
-                angular.forEach($scope.getResponse, function(value,index){
-                  $scope.eventComments.push(value);
-              })
+
+            $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).success(function(comment){
+              $scope.eventComments.push(comment);
             });
+            // $scope.commentForm.$setPristine();
+            // $scope.currentRecord = {};
         };
-        
-        // console.log($scope.eventComments.indexOf(comment));
-        // var commentIndex = $scope.eventComments.indexOf(comment);
         
         $scope.deleteComment = function(comment) {
           var commentIndex = $scope.eventComments.indexOf(comment);
-          $scope.eventComments.splice(commentIndex, 1);
           if (confirm("Are you sure you want to delete this comment?")) {
             alert("The comment has been successfully deleted.");
-          }
-          $http.delete('/viewevent/' + eventid + '/comments/' + comment._id).success(function(data) {
-            angular.copy(data, $scope.eventComments);
-          });  
+            $scope.eventComments.splice(commentIndex, 1);
+            $http.delete('/api/viewevent/' + eventid + '/comments/' + comment._id).success(function(data) {
+                angular.copy(data, $scope.eventComments);
+            });
+         }
         };
       }
 })();
