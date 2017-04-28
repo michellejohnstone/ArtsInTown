@@ -29,7 +29,8 @@
         $scope.eventComments = [];
         //Gets the comments in the DB and displays them on the page
         $http.get('/api/viewevent/' + $routeParams.eventid + '/comments').then(function(response){
-            $scope.eventComments = response.data; 
+            $scope.eventComments = response.data;
+            console.log($scope.eventComments);
         });
         $scope.addComment = function() {
             //read data from form 
@@ -39,10 +40,26 @@
                 created: Date.now(),
             };
             $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).then(function(response){
-                angular.forEach($scope.getResponse,function(value,index){
+                // console.log($scope.getResponse);
+                // console.log($scope.value);
+                angular.forEach($scope.getResponse, function(value,index){
                   $scope.eventComments.push(value);
               })
             });
+        };
+        
+        // console.log($scope.eventComments.indexOf(comment));
+        // var commentIndex = $scope.eventComments.indexOf(comment);
+        
+        $scope.deleteComment = function(comment) {
+          var commentIndex = $scope.eventComments.indexOf(comment);
+          $scope.eventComments.splice(commentIndex, 1);
+          if (confirm("Are you sure you want to delete this comment?")) {
+            alert("The comment has been successfully deleted.");
+          }
+          $http.delete('/viewevent/' + eventid + '/comments/' + comment._id).success(function(data) {
+            angular.copy(data, $scope.eventComments);
+          });  
         };
       }
 })();
