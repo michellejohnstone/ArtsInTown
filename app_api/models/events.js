@@ -21,25 +21,10 @@ var locationSchema = new mongoose.Schema({
 });
 
 var commentSchema = new mongoose.Schema({
-    commentAuthor: {
-        type: String,
-        required: true
-    },
-    rating: {
-        type: Number,
-        required: false,
-        min:0, 
-        max: 5
-    },
-    commentContent: {
-        type: String,
-        required: true
-    },
-    //needs to be autogen, for now wil have String as placeholder
-    commentTimeStamp: {
-        type: Date, 
-        "default": Date.now
-    },
+    author: {type: String, required: true},
+    body: {type: String, required: true},
+    event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event'},
+    created: { type: Date, default: Date.now }
 });
 
 // parent schema
@@ -76,7 +61,7 @@ var eventSchema = new mongoose.Schema({
     // Add nested schema, reference as an array 
     location:  [locationSchema],
     
-    comment: [commentSchema]
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
 
