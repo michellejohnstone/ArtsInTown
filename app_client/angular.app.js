@@ -13,13 +13,12 @@
         templateUrl: 'eventList/eventList.view.html',
         controller: 'EventListController',
         controllerAs: 'eventsCon'
-      })
-      .when('/eventdetail/:eventid', { //need to change to :eventid
+    })
+    .when('/eventdetail/:eventid', { 
         templateUrl: 'eventDetail/eventDetailTest.view.html',
         controller: 'EventDetailController',
         controllerAs: 'detailsCon'
-      })
-
+    })
     .when('/contact', {
       templateUrl: 'other/contactLayout.html'
     })

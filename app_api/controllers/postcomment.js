@@ -18,7 +18,7 @@ module.exports.commentUpdateOne = function(req, res) {
   console.log(req.params.commentid);
   Comments
     .findById(req.params.commentid)
-    .select('commentAuthor, commentContent, commentTimestamp') 
+    .select('author, body') 
     //'-' states that we don't want to retreive
     //from db.
     .exec(
@@ -32,18 +32,12 @@ module.exports.commentUpdateOne = function(req, res) {
           sendJSONresponse(res, 400, err);
           return;
         }
-        if (req.body.commentAuthor !== undefined) {
+        if (req.body.author !== undefined) {
           console.log("in if");
            comment.commentAuthor = req.body.commentAuthor;
-         }
-         if (req.body.rating !== undefined) {
-           comment.rating = req.body.rating;
-         }
-        if (req.body.commentContent !== undefined) {
-          comment.commentContent = req.body.commentContent;
         }
-        if (req.body.commentTimestamp !== undefined) {
-          comment.commentTimestamp = req.body.commentTimestamp;
+        if (req.body.body !== undefined) {
+          comment.commentContent = req.body.commentContent;
         }
         comment.save(function(err, comment) {
           if (err) {
@@ -84,12 +78,12 @@ module.exports.deleteComment = function(req, res) {
 
 //CREATE NEW COMMENT
 module.exports.commentCreate = function(req, res) {
-  console.log("create comment");
+  console.log("req.body._id");
   Comments.create({
-    commentAuthor: req.body.commentAuthor,
-    rating: req.body.rating,
-    commentContent: req.body.commentContent,
-    commentTimestamp: req.body.commentTimestamp,
+    author: req.body.author,
+    body: req.body.body,
+    event: req.params.id,
+    created: Date.now(),  // created: req.body.commentTimestamp,
   }, function(err, location) {
     if (err) {
       console.log(err);

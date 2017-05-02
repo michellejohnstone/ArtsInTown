@@ -1,16 +1,10 @@
 var mongoose = require('mongoose');
 
 var commentSchema = new mongoose.Schema({
-    commentAuthor: {
-        type: String,
-        required: true
-    },
-    commentContent: {
-        type: String,
-        required: true
-    },
-    //needs to be autogen, for now wil have String as placeholder
-    commentTimeStamp: String,
+    author: {type: String, required: true},
+    body: {type: String, required: true},
+    event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event'}, 
+    created: { type: Date, default: Date.now }
 });
 
 mongoose.model('Comment', commentSchema);
