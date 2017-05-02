@@ -317,8 +317,8 @@
     </nav>
     <!-- Set your background image for this header on the line below.-->
     <!--header.intro-header(style="background-image: url('../bootstrap/images/pexels-photo-bass-player.jpeg')")-->
-    <header style="background-image: url('https://static.pexels.com/photos/2318/vintage-technology-keyboard-old-large.jpg')" class="intro-header">
-      <div class="container">
+    <header autofocus style="background-image: url('https://static.pexels.com/photos/2318/vintage-technology-keyboard-old-large.jpg')" class="intro-header">
+      <div autofocus class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10">
             <div class="post-heading">
@@ -339,10 +339,31 @@
     </header>
     <nav class="col-sm-9"></nav>
     <div id="affix-container">
-      <nav class="col-sm-3"><a data-spy="affix" data-offset-top="480" class="btn btn-default">Buy Tickets</a></nav>
+      
+      <nav class="col-sm-3">
+        <div class = "row" style = "display:inline-block">
+          <a data-spy="affix" data-offset-top="480" class="btn btn-default">Buy Tickets</a>
+            <!--*******SOCIAL MEDIA BUTTONS*******************************************************************-->
+            <div class = "center-block">
+              <h6>Share</h6>
+              <!--<button type="button" class="btn btn-success share-btn">Share</button>-->
+              <div class="social top center networks-4 ">
+                  <!-- Google Plus Share Button -->
+                  <a class="fbtn share gplus" href="https://plus.google.com/share?url=url"><i class="fa fa-google-plus"></i></a> 
+                  <!-- Twitter Share Button -->
+                  <a class="fbtn share twitter" href="https://twitter.com/intent/tweet?text=title&amp;url=url&amp;via=creativedevs"><i class="fa fa-twitter"></i></a> 
+                  <!-- Pinterest Share Button -->
+                  <a class="fbtn share pinterest" href="http://pinterest.com/pin/create/button/?url=url&amp;description=data&amp;media=image"><i class="fa fa-pinterest"></i></a>
+                  <!-- LinkedIn Share Button -->
+                  <a class="fbtn share linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=url&amp;title=title&amp;source=url/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!--*******END SOCIAL MEDIA BUTTONS*******************************************************************-->
+        </div>
+      </nav>
     </div>
   </body>
-  <!-- Container for Event Details-->
+  <!-- ******************Container for Event Details**********************************-->
   <div id="band" class="container">
     <div class="row">
       <div class="col-sm-8 col-md-8 col-lg-9">
@@ -352,8 +373,8 @@
       <div class="col-sm-3 col-md-3 col-lg-2"><a id="favoriteButton" style="font-size:20px" onclick="javascript:updateBookmarks()" class="btn"><img id="bookmark" src="public/bootstrap/images/unbooked.png">&nbspSave This Event&nbsp</a><br><br>
       </div>
     </div>
-    <div class="row">
       <!--*******COMMENTS*******************************************************************-->
+      <div class="row">
        <div class="col-sm-6 col-md-6 col-lg-8">
         <div class="panel panel-primary review-panel">
           <div class="panel-heading">
@@ -420,11 +441,9 @@
               <!-- ***END EXPAND COMMENTS******************* -->
         </div>
       </div>
-    </div>
-    </div>
+      </div>
+    <!--*******END COMMENTS*******************************************************************-->
   </div>
-       <!--*******END COMMENTS*******************************************************************-->
-       
        <!--*******GOOGLEMAP*******************************************************************-->
       <div class="col-sm-6 col-md-6 col-lg-4">
         <div id="googleMap"></div>
@@ -448,19 +467,20 @@
           marker.setMap(map);
           }
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjb9lV1fxJldBB2qhfi_KAZMHt5nDZzvM&amp;callback=myMap"></script><a href="https://twitter.com/share" data-show-count="false" class="twitter-share-button">Tweet</a>
-        <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script><a href="https://twitter.com/sunhazemusic" class="twitter-timeline">Tweets by sunhazemusic</a>
-        <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
+    </div>
+  
+  </div>
+  <!-- ******************END Container for Event Details**********************************-->
     </div>
   </div>
   
-<footer class="text-center">
-  <a href="#myPage" data-toggle="tooltip" title="TO TOP" class="up-arrow">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br>
-    <p><small>&copy; Arts in Town 2017</small></p>
-</footer>
+<!--*******MJ: duplicated footer pane, not sure why, so commenting out*********-->
+<!--<footer class="text-center">-->
+<!--  <a href="#myPage" data-toggle="tooltip" title="TO TOP" class="up-arrow">-->
+<!--    <span class="glyphicon glyphicon-chevron-up"></span>-->
+<!--    </a><br>-->
+<!--    <p><small>&copy; Arts in Town 2017</small></p>-->
+<!--</footer>-->
 
 <!-- Javascript-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

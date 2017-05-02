@@ -36,9 +36,10 @@
             var commentData = {
                 author: $scope.author, 
                 body: $scope.body, 
+                event: $routeParams.eventid,
                 created: Date.now(),
             };
-
+            console.log("inside addComment", $routeParams.eventid);
             $http.post('/api/viewevent/' + $routeParams.eventid + '/comments', commentData).success(function(comment){
               $scope.eventComments.push(comment);
             });

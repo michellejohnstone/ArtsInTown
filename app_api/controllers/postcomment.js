@@ -78,11 +78,10 @@ module.exports.deleteComment = function(req, res) {
 
 //CREATE NEW COMMENT
 module.exports.commentCreate = function(req, res) {
-  console.log("req.body._id");
   Comments.create({
     author: req.body.author,
     body: req.body.body,
-    event: req.params.id,
+    event: req.body.event,
     created: Date.now(),  // created: req.body.commentTimestamp,
   }, function(err, location) {
     if (err) {
