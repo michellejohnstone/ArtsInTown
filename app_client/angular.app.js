@@ -23,6 +23,10 @@
     .when('/contact', {
       templateUrl: 'other/contactLayout.html'
     })
+    
+    .when('/aboutus', {
+      templateUrl: 'other/aboutus.html'
+    })
 
     .when('/userprofile/:id', {
       templateUrl: 'other/userProfile.html',
