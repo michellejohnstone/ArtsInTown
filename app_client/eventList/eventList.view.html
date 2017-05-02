@@ -3,19 +3,30 @@ from app_api and bring back data. Includes original layout
 plus angular code to grab events data from eventList controller -->
 
 
-
 <!-- Container (The Search Section)-->
-<div id="findevents" class="container text-center">
-  <h3>SEARCH BAR</h3>
+  <div ng-controller="EventListController">
+  <div id="findevents" class="container text-center">
+  <h3>FIND EVENTS</h3>
   <!-- Actual search bar-->
-  <div class="col-sm-6 col-sm-offset-3">
-    <div class="input-group stylish-input-group">
-      <input type="text" placeholder="Search" class="form-control"><span class="input-group-addon">
-            <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
+  <!-- <div class="col-sm-6 col-sm-offset-3"> -->
+    <div class="search-box-btn"></div>
+    <input id="search" type="text", name="search", ng-model="query" placeholder="Search for an event..">
+    <div class = "search-box-btn">
+      <span>
+        <button type = "button" ng-click="search()">search
+        <span class = "glyphicon glyphicon-search"></span></button>
       </span>
     </div>
+    </div>
+    <ul class ="events" ng-show="searchResult && query">
+      <li ng-repeat="events in eventsToFilter | filter: searchQuery | orderBy:type"
+      >{{events.name}} {{events.date}} {{events.cost}}</li>
+      </li>
+    </ul>
   </div>
-</div>
+  </div>
+  </div>
+
 
 <!-- Container (Event Section)-->
 <!-- Updated with Angular directives(?) -->
@@ -28,7 +39,7 @@ plus angular code to grab events data from eventList controller -->
         </h3>
       </div>
       <div class="row">
-        <div ng-repeat="elem in result" ng-switch on="elem.city">
+        <div ng-repeat="elem in result" ng-switch on="elem.city"
           <div class="col-sm-4">
             <div class="thumbnail"><img ng-switch-when='Oakland' src="https://static.pexels.com/photos/2318/vintage-technology-keyboard-old-large.jpg" alt="Paris" width="400" height="300">
               <div class="thumbnail"><img ng-switch-when='Berkeley' src="https://static.pexels.com/photos/12764/pexels-photo-12764-large.jpeg" alt="New York" width="400" height="300">

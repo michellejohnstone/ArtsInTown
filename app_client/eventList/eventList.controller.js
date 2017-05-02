@@ -14,6 +14,18 @@
               })
             $scope.len = $scope.result.length;
         });
-        
+    
+        $scope.search=function(){
+        $scope.searchQuery = angular.copy($scope.query);
+        $scope.eventsToFilter=$scope.result;
+        $scope.searchResult=true;
+        $scope.result = result.data;
+        angular.forEach($scope.result, function(value,index){
+            $scope.result.push(value);
+        })
+        $scope.len = $scope.result.length;
+        };
     }
 })();
+
+    
