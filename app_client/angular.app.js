@@ -24,7 +24,7 @@
       templateUrl: 'other/contactLayout.html'
     })
     
-    .when('/aboutus', {
+    .when('/about', {
       templateUrl: 'other/aboutus.html'
     })
 
